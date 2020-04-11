@@ -19,8 +19,9 @@ namespace family {
 		Tree& addMother(string child, string mother);
 		string relation(string s1);
 		string find(string s1);
-		Tree& remove(string s1);
+		void remove(string s1);
 		void display();
+		void deleteT();
 
 
 
