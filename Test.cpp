@@ -27,10 +27,10 @@ TEST_CASE("addMother and addFather, 16 tests") {
 	CHECK(T1.relation("Rachel") == string("mother"));
 	CHECK(T1.relation("Rivka") == string("grandmother"));
 	CHECK(T1.relation("Issac") == string("grandfather"));
-	CHECK(T1.relation("Avram") == string("grand-grandfather"));
-	CHECK(T1.relation("Sara") == string("grand-grandmother"));
-	CHECK(T1.relation("Terah") == string("grand-grand-grandfather"));
-	CHECK(T1.relation("Amtalai") == string("grand-grand-grandmother"));
+	CHECK(T1.relation("Avram") == string("great-grandfather"));
+	CHECK(T1.relation("Sara") == string("great-grandmother"));
+	CHECK(T1.relation("Terah") == string("great-great-grandfather"));
+	CHECK(T1.relation("Amtalai") == string("great-great-grandmother"));
 
 
 	CHECK_THROWS_AS(T1.addFather("Yosef", "Shoki"),runtime_error);
@@ -60,18 +60,18 @@ TEST_CASE("find , 15 test") {
 	CHECK(T2.find("father") == string("Yakov"));
 	CHECK(T2.find("grandmother") == string("Rivka"));
 	CHECK(T2.find("grandfather") == string("Issac"));
-	CHECK(T2.find("grand-grandfather") == string("Avram"));
-	CHECK(T2.find("grand-grandmother") == string("Sara"));
-	CHECK(T2.find("grand-grand-grandfather") == string("Terah"));
-	CHECK(T2.find("grand-grand-grandmother") == string("Amtalai"));
+	CHECK(T2.find("great-grandfather") == string("Avram"));
+	CHECK(T2.find("great-grandmother") == string("Sara"));
+	CHECK(T2.find("great-great-grandfather") == string("Terah"));
+	CHECK(T2.find("great-great-grandmother") == string("Amtalai"));
 	CHECK(T2.find("me") == string("Yosef"));
 
-	CHECK_THROWS(T2.find("grand-grand-grand-grandmother"));
-	CHECK_THROWS(T2.find("grand-grand-grand-grandfather"));
-	CHECK_THROWS(T2.find("grand-grand-grand-grand-grandfather"));
-	CHECK_THROWS(T2.find("grand-grand-grand-grand-grandmother"));
-	CHECK_THROWS(T2.find("grand-grand-grand-grand-grand-grandfather"));
-	CHECK_THROWS(T2.find("grand-grand-grand-grand-grand-grandmother"));
+	CHECK_THROWS(T2.find("great-great-great-grandmother"));
+	CHECK_THROWS(T2.find("great-great-great-grandfather"));
+	CHECK_THROWS(T2.find("great-great-great-great-grandfather"));
+	CHECK_THROWS(T2.find("great-great-great-great-grandmother"));
+	CHECK_THROWS(T2.find("great-great-great-great-great-grandfather"));
+	CHECK_THROWS(T2.find("great-great-great-great-great-grandmother"));
 
 }
 
@@ -91,10 +91,10 @@ TEST_CASE("relation , 22 tests") {
 	CHECK(T1.relation("Rachel") == string("mother"));
 	CHECK(T1.relation("Rivka") == string("grandmother"));
 	CHECK(T1.relation("Issac") == string("grandfather"));
-	CHECK(T1.relation("Avram") == string("grand-grandfather"));
-	CHECK(T1.relation("Sara") == string("grand-grandmother"));
-	CHECK(T1.relation("Terah") == string("grand-grand-grandfather"));
-	CHECK(T1.relation("Amtalai") == string("grand-grand-grandmother"));
+	CHECK(T1.relation("Avram") == string("great-grandfather"));
+	CHECK(T1.relation("Sara") == string("great-grandmother"));
+	CHECK(T1.relation("Terah") == string("great-great-grandfather"));
+	CHECK(T1.relation("Amtalai") == string("great-great-grandmother"));
 
 	CHECK(T1.relation("Yosef") == string("unrelated"));
 	CHECK(T1.relation("Konal") == string("unrelated"));
@@ -165,10 +165,10 @@ TEST_CASE("43 random tests") {
 	CHECK(T1.relation("Rachel") == string("mother"));
 	CHECK(T1.relation("Rivka") == string("grandmother"));
 	CHECK(T1.relation("Issac") == string("grandfather"));
-	CHECK(T1.relation("Avram") == string("grand-grandfather"));
-	CHECK(T1.relation("Sara") == string("grand-grandmother"));
-	CHECK(T1.relation("Terah") == string("grand-grand-grandfather"));
-	CHECK(T1.relation("Amtalai") == string("grand-grand-grandmother"));
+	CHECK(T1.relation("Avram") == string("great-grandfather"));
+	CHECK(T1.relation("Sara") == string("great-grandmother"));
+	CHECK(T1.relation("Terah") == string("great-great-grandfather"));
+	CHECK(T1.relation("Amtalai") == string("great-great-grandmother"));
 
 	CHECK(T1.relation("Yosef") == string("unrelated"));
 	CHECK(T1.relation("Konal") == string("unrelated"));

@@ -30,6 +30,11 @@ namespace family {
 		string me;
 		Tree* mom;
 		Tree* dad;
+		Tree* san;
+		char sex;
+		Tree* relationPrivate(string s1);
+		Tree* findPrivate(int num,char c);
+		void print2D(Tree* root, int space);
 
 	};
 };

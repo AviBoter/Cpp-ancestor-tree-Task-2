@@ -8,6 +8,7 @@
 #include "FamilyTree.hpp"
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
@@ -31,7 +32,7 @@ int main() {
 	cout << T.relation("Yosef") << endl;  // prints "me"
 
 	cout << T.find("mother") << endl;  // prints "Rachel"
-	cout << T.find("great-great-grandfather") << endl;  // prints "Avraham"
+	cout << T.find("great-great-grandfather") << endl;  // prints "Terah"
 	try {
 		cout << T.find("uncle") << endl;  // throws an exception
 	} catch (const exception& ex) {
@@ -40,6 +41,9 @@ int main() {
 
 	T.remove("Avraham"); // removes Avraham and Terah
 	cout << T.relation("Terah") << endl;  // prints "unrelated"
+
+	
+
 	
 
     return 0;
