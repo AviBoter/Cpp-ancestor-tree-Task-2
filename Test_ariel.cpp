@@ -25,6 +25,7 @@ TEST_CASE("Yosef Tree case") {
 	T.addFather("Yaakov", "Isaac");
 	T.addMother("Yaakov", "Rivka");
 	T.addFather("Rachel", "Avi");
+	cout << T.find("grandfather") <<" here *****************"<< endl;
 	T.addMother("Rachel", "Ruti");
 	T.addFather("Isaac", "Avraham");
 	T.addMother("Isaac", "Ruti");

@@ -18,6 +18,8 @@ Tree::Tree() {}
 Tree::~Tree() {
 	
 	deleteT();
+	this->dad = NULL;
+	this->mom = NULL;
 }
 Tree::Tree(string name) {
 	
@@ -32,6 +34,8 @@ Tree& Tree::addFather(string child, string father) {
 	
 	
 	if (this->me == child ){
+		if (father == "Avi")
+			cout << "ya abos dinak" << endl;
 		if(this->dad == NULL) 
 		{
 		
@@ -47,8 +51,8 @@ Tree& Tree::addFather(string child, string father) {
 	else if(this->dad!=NULL) {
 		 this->dad->addFather(child, father);
 	}
-	else if(this->mom!=NULL){
-		 this->dad->addFather(child, father);
+	if(this->mom!=NULL){
+		 this->mom->addFather(child, father);
 	   }
 	
 		return *this;
@@ -59,7 +63,11 @@ Tree& Tree::addMother(string child, string mother) {
 	
 	
 	if (this->me == child){
+		if (mother == "Sara")
+			cout << "sara moderfacer"<<child << endl;
 		if (this->mom == NULL) {
+			if (mother == "Sara")
+				cout << "sara moderfacer" << child << endl;
 			
 			this->mom = new Tree(mother);
 			this->mom->san = this;
@@ -72,7 +80,7 @@ Tree& Tree::addMother(string child, string mother) {
 	else if (this->dad != NULL) {
 		 this->dad->addMother(child,mother);
 	}
-	else if (this->mom != NULL) {
+	if (this->mom != NULL) {
 		 this->mom->addMother(child, mother);
 	}
 	
@@ -191,13 +199,13 @@ string Tree::find(string s1) {
 			throw runtime_error("The tree cannot handle the " + s1 + " relation");
 		}
 		
-		if (this->dad != NULL) {
-			
-			temp = this->dad->findPrivate(count, c);
-		}
-		if (temp == NULL && this->mom != NULL) {
+		if (this->mom != NULL) {
 			
 			temp = this->mom->findPrivate(count, c);
+		}
+		if (temp == NULL && this->dad != NULL) {
+			
+			temp = this->dad->findPrivate(count, c);
 		}
 	
 	}
