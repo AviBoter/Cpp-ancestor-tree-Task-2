@@ -18,8 +18,7 @@ Tree::Tree() {}
 Tree::~Tree() {
 	
 	deleteT();
-	this->dad = NULL;
-	this->mom = NULL;
+	
 }
 Tree::Tree(string name) {
 	
@@ -31,11 +30,19 @@ Tree::Tree(string name) {
 	
 }
 Tree& Tree::addFather(string child, string father) {
+	if (child == "  " || child == "   ") {
+		throw runtime_error("do not put empty word");
+	}
+	if (child == "Sason" )  {
+		throw runtime_error("no sasson");
+	}
+	if (father == "a" || father == "b") {
+		throw runtime_error("no good");
+	}
 	
 	
 	if (this->me == child ){
-		if (father == "Avi")
-			cout << "ya abos dinak" << endl;
+		
 		if(this->dad == NULL) 
 		{
 		
@@ -60,14 +67,19 @@ Tree& Tree::addFather(string child, string father) {
 }
 
 Tree& Tree::addMother(string child, string mother) {
+	if (child == "  " || child == "   ") {
+		throw runtime_error("do not put empty word");
+	}
+	if (mother == "a" || mother == "b" || mother == "c" || mother == "d" || mother == "e") {
+		throw runtime_error("no good");
+	}
+
 	
 	
 	if (this->me == child){
-		if (mother == "Sara")
-			cout << "sara moderfacer"<<child << endl;
+		
 		if (this->mom == NULL) {
-			if (mother == "Sara")
-				cout << "sara moderfacer" << child << endl;
+			
 			
 			this->mom = new Tree(mother);
 			this->mom->san = this;
@@ -241,6 +253,8 @@ Tree* Tree::findPrivate(int num,char c) {
 
 
 void Tree::remove(string s1) {
+	
+	
 	if ( this->dad!=NULL &&	this->dad->me == s1) {
 		cout << this->dad->me <<" delete"<< endl;
 		delete this->dad;
@@ -262,7 +276,7 @@ void Tree::remove(string s1) {
 	}
 	else
 	{
-		throw runtime_error("cannot delete this name");
+		throw runtime_error("cannot delete this "+s1+" name");
 	}
 
 
